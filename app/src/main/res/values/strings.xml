@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SkinnyAppBeta</string>
+    <string name="home">Home</string>
+    <string name="history">History\n</string>
+    <string name="page_title">SKINNY\n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose">Pilih</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
+    <string name="article">Artikel</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in massa metus. In at urna ut nisi eleifend gravida ac congue turpis. Nulla a metus eget purus laoreet pharetra in id turpis. Aliquam eget massa euismod, elementum ante quis, tincidunt velit. Curabitur eget nisi vehicula tortor dignissim faucibus. Quisque eget massa ac dolor imperdiet rhoncus. Pellentesque ullamcorper vel metus id pellentesque. Vestibulum aliquam malesuada velit, sit amet blandit risus venenatis eu.</string>
+</resources>

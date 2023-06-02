@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/standard_bottom_sheet"
+    style="@style/Widget.Material3.BottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_top_curve"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/choose"
+            style="@style/textH1"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_camera"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/baseline_photo_camera_24"
+            android:contentDescription="@null"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"/>
+
+        <TextView
+            android:id="@+id/tv_camera"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/camera"
+            android:paddingStart="12dp"
+            android:gravity="center|start"
+            app:layout_constraintTop_toTopOf="@id/img_camera"
+            app:layout_constraintStart_toEndOf="@id/img_camera"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/img_camera"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_gallery"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/baseline_gallery_24"
+            android:contentDescription="@null"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/img_camera"
+            app:layout_constraintStart_toStartOf="@id/img_camera"/>
+
+        <TextView
+            android:id="@+id/tv_gallery"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/gallery"
+            android:paddingStart="12dp"
+            android:gravity="center|start"
+            app:layout_constraintTop_toTopOf="@id/img_gallery"
+            app:layout_constraintStart_toEndOf="@id/img_gallery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/img_gallery"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
