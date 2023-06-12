@@ -75,7 +75,7 @@ class RegisterFragment : Fragment() {
         }
 
         binding.btnBack.setOnClickListener {
-
+            requireActivity().onBackPressed()
         }
     }
 

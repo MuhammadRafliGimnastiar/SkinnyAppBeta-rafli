@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.gimnastiar.skinnyappbeta.data.remote.model.ResponseLogin
 import com.gimnastiar.skinnyappbeta.data.remote.model.ResponseRegister
+import com.gimnastiar.skinnyappbeta.data.remote.model.ResponseTest
 import com.gimnastiar.skinnyappbeta.data.remote.network.ApiService
 
 class LoginRepository(
@@ -61,4 +62,6 @@ class LoginRepository(
             Log.i("Login Test exception", "exception ${e.message}")
         }
     }
+
+
 }

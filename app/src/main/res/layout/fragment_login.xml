@@ -42,7 +42,8 @@
         <com.gimnastiar.skinnyappbeta.ui.customView.MyInputEditText
             android:id="@+id/username_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,7 +64,8 @@
             android:id="@+id/password_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,9 +86,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/sign_up"
-        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        app:layout_constraintEnd_toEndOf="@id/btn_login"
         app:layout_constraintStart_toStartOf="@id/btn_login"
-        app:layout_constraintEnd_toEndOf="@id/btn_login"/>
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/bg_loading"

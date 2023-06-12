@@ -15,14 +15,19 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.gimnastiar.skinnyappbeta.R
 import com.gimnastiar.skinnyappbeta.data.remote.model.Article
+import com.gimnastiar.skinnyappbeta.data.repository.LoginRepository
+import com.gimnastiar.skinnyappbeta.data.repository.Resource
 import com.gimnastiar.skinnyappbeta.databinding.FragmentHomeBinding
+import com.gimnastiar.skinnyappbeta.ui.ViewModelFactory
 import com.gimnastiar.skinnyappbeta.ui.dapter.ArticleAdapter
 import com.gimnastiar.skinnyappbeta.ui.dapter.ImageSliderAdapter
 import com.gimnastiar.skinnyappbeta.ui.detailArticle.DetailArticleActivity
+import com.gimnastiar.skinnyappbeta.utils.LoginPreference
 import java.text.FieldPosition
 
 class HomeFragment : Fragment() {
@@ -32,6 +37,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var imageViewsList: ArrayList<Int>
     private lateinit var dots: ArrayList<TextView>
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,6 +64,7 @@ class HomeFragment : Fragment() {
         }, 800)
 
     }
+
 
     private fun showView(visible: Boolean) {
         binding.apply {

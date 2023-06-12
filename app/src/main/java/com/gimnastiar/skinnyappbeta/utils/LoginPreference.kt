@@ -31,6 +31,12 @@ class LoginPreference(context: Context) {
         return data
     }
 
+    fun changeToken(newToken: String) {
+        val editor = preference.edit()
+        editor.putString("token", newToken)
+        editor.apply()
+    }
+
 
     fun getToken(): String? {
         val token = preference.getString("token", null)

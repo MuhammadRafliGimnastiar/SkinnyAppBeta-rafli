@@ -20,11 +20,12 @@ class PredictRepository(
     ) {
 
     fun getPredictLive(
-        photo: MultipartBody.Part
+        photo: MultipartBody.Part,
+        token: String
     ) : LiveData<Resource<ResponsePredict>> = liveData {
         emit(Resource.Loading)
         try {
-            val response = apiService.getPredict(photo)
+            val response = apiService.getPredict(photo, token)
             if (response.error){
                 emit(Resource.Error(response.msg))
                 Log.i("Predict Test", "errorr ${response.msg}")

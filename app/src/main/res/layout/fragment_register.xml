@@ -43,6 +43,7 @@
 
         <com.gimnastiar.skinnyappbeta.ui.customView.MyInputEditText
             android:id="@+id/name_input"
+            android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -64,6 +65,7 @@
 
         <com.gimnastiar.skinnyappbeta.ui.customView.MyInputEditText
             android:id="@+id/username_input"
+            android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

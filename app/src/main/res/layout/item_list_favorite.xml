@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view_favorite"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_favorite"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBaseline_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/customImageView4Percent"
+            tools:src="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/btn_favorite"
+            style="@style/Widget.Material3.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            app:icon="@drawable/baseline_favorite_24"
+            android:layout_marginEnd="-50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title_favorite" />
+
+
+        <TextView
+            android:id="@+id/tv_title_favorite"
+            style="@style/textH2Handling"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start|center"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_short_description"
+            app:layout_constraintEnd_toStartOf="@id/btn_favorite"
+            app:layout_constraintStart_toEndOf="@id/img_favorite"
+            app:layout_constraintTop_toTopOf="@id/img_favorite"
+            tools:text="Article" />
+
+        <TextView
+            android:id="@+id/tv_short_description"
+            style="@style/textSender"
+            app:layout_constraintBottom_toBottomOf="@id/img_favorite"
+            app:layout_constraintEnd_toEndOf="@id/tv_title_favorite"
+            app:layout_constraintStart_toEndOf="@id/img_favorite"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_favorite"
+            tools:text="@string/lorem" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

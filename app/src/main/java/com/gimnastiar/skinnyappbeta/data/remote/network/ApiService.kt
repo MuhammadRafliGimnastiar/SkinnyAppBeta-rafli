@@ -4,6 +4,7 @@ import com.gimnastiar.skinnyappbeta.data.remote.model.HistoryResponse
 import com.gimnastiar.skinnyappbeta.data.remote.model.ResponseLogin
 import com.gimnastiar.skinnyappbeta.data.remote.model.ResponsePredict
 import com.gimnastiar.skinnyappbeta.data.remote.model.ResponseRegister
+import com.gimnastiar.skinnyappbeta.data.remote.model.ResponseTest
 import com.gimnastiar.skinnyappbeta.data.remote.model.ResponseUpToDb
 import okhttp3.MultipartBody
 import retrofit2.http.GET
@@ -17,7 +18,8 @@ interface ApiService {
     @Multipart
     @POST("/predict")
     suspend fun getPredict(
-        @Part file: MultipartBody.Part
+        @Part file: MultipartBody.Part,
+        @Part("token") token: String
     ) : ResponsePredict
 
 

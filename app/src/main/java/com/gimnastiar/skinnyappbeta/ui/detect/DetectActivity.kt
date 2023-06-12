@@ -45,6 +45,7 @@ class DetectActivity : AppCompatActivity() {
     private lateinit var dialog: Dialog
     private lateinit var pref: LoginPreference
     private lateinit var username: String
+    private lateinit var token: String
 
     private val launcherIntentCamera = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -89,8 +90,9 @@ class DetectActivity : AppCompatActivity() {
         val data = pref.getUserData()
         if (data.username != null) {
             username = data.username
+            token = data.token!!
 //            username = data.name.substring(1, data.name.length - 1)
-            Log.i("TEST USERNAME", "username = $username")
+            Log.i("TEST TOKEN", "username = $token")
         }
 
         val type = intent.getStringExtra(TAG)
@@ -112,7 +114,7 @@ class DetectActivity : AppCompatActivity() {
 
     private fun uploadImage() {
         getFile?.let { getFile -> imageMultipart(getFile) }?.let { fileMultipart ->
-            viewModel.predictLiveResponse(fileMultipart).observe(this) { result ->
+            viewModel.predictLiveResponse(fileMultipart, token).observe(this) { result ->
                 if (result != null) {
                     when(result) {
                         is Resource.Loading -> {
@@ -158,6 +160,8 @@ class DetectActivity : AppCompatActivity() {
             rvListHandlingDeases.adapter = adapter
 
             btnSave.setOnClickListener {
+                binding.btnSave.setIconResource(R.drawable.baseline_bookmark_24)
+                binding.btnSave.isEnabled = false
                 addToHistory(data)
             }
         }
@@ -195,11 +199,11 @@ class DetectActivity : AppCompatActivity() {
     private fun upToDbHandler(message: String, error: Boolean) {
         if (error) {
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            binding.btnSave.setIconResource(R.drawable.baseline_bookmark_border_24)
+            binding.btnSave.isEnabled = true
         } else{
             Snackbar.make(findViewById(R.id.btn_save), message, Snackbar.LENGTH_SHORT)
                 .show()
-            binding.btnSave.setIconResource(R.drawable.baseline_bookmark_24)
-            binding.btnSave.isEnabled = false
         }
     }
 

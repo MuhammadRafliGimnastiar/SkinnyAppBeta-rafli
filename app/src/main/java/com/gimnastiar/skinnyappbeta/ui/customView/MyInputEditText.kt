@@ -47,7 +47,7 @@ class MyInputEditText : TextInputEditText {
                         }
                     }
                     0x00000081 -> {
-                        if (text.toString().length <= 7) {
+                        if (text.toString().length < 6) {
                             textInputLayout.error = context.getString(R.string.password_wrong)
                         }
                     }

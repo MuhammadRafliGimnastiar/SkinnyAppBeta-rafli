@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.gimnastiar.skinnyappbeta.R
 import com.gimnastiar.skinnyappbeta.databinding.ActivityMainBinding
+import com.gimnastiar.skinnyappbeta.ui.favorite.FavoriteActivity
 import com.gimnastiar.skinnyappbeta.ui.history.HistoryFragment
 import com.gimnastiar.skinnyappbeta.ui.homeFragment.HomeFragment
 import com.gimnastiar.skinnyappbeta.ui.setting.SettingActivity
@@ -56,8 +57,9 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 R.id.favorite -> {
-                    Snackbar.make(findViewById(R.id.frame_layout), "Masih dalam pengembangan", Snackbar.LENGTH_SHORT)
-                        .show()
+//                    Snackbar.make(findViewById(R.id.frame_layout), "Masih dalam pengembangan", Snackbar.LENGTH_SHORT)
+//                        .show()
+                    startActivity(Intent(this@MainActivity, FavoriteActivity::class.java))
                 }
             }
             true

@@ -1,6 +1,7 @@
 package com.gimnastiar.skinnyappbeta.ui.loginFragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -43,26 +44,25 @@ class LoginFragment : Fragment() {
     }
 
     private fun buttonClick() {
-        binding.btnLogin.setOnClickListener {
-            binding.apply {
-                btnLogin.setOnClickListener {
-                    val username = usernameInput.text
-                    val password = passwordInput.text
+        binding.apply {
+            btnLogin.setOnClickListener {
+                val username = usernameInput.text
+                val password = passwordInput.text
 
-                    val cUsername = username != null && username.toString().isNotEmpty()
-                    val cPassword = password != null && password.toString().isNotEmpty()
+                val cUsername = username != null && username.toString().isNotEmpty()
+                val cPassword = password != null && password.toString().isNotEmpty()
 
-                    if(cUsername && cPassword) {
-                        loginHandler(
-                            username.toString().trim(),
-                            password.toString().trim()
-                        )
-                    } else {
-                        Toast.makeText(requireContext(), "Harap masukan input terlebih dahulu!", Toast.LENGTH_SHORT).show()
-                    }
+                if(cUsername && cPassword) {
+                    loginHandler(
+                        username.toString().trim(),
+                        password.toString().trim()
+                    )
+                } else {
+                    Toast.makeText(requireContext(), "Harap masukan input terlebih dahulu!", Toast.LENGTH_SHORT).show()
                 }
             }
         }
+
 
         binding.btnToRegist.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
@@ -87,6 +87,7 @@ class LoginFragment : Fragment() {
                         showLoading(false)
                         errorHandler(it.data)
                     }
+                    else -> {}
                 }
             }
         }

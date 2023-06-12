@@ -23,8 +23,9 @@ class DetectViewModel(private val repository: PredictRepository): ViewModel() {
     }
 
     fun predictLiveResponse(
-        photo: MultipartBody.Part
-    ) = repository.getPredictLive(photo)
+        photo: MultipartBody.Part,
+        token: String
+    ) = repository.getPredictLive(photo, token)
 
     fun addToHistory(
         username: String,

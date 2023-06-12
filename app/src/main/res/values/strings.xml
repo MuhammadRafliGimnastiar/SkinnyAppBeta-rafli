@@ -36,7 +36,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="full_name">Full Name</string>
     <string name="register">Register</string>
-    <string name="password_wrong">password must 8 character</string>
+    <string name="password_wrong">disarankan minimun 6 karakter</string>
     <string name="logout_text_makesure">Apa kamu yakin ingin keluar?</string>
     <string name="no">Tidak</string>
     <string name="yes">Ya</string>
