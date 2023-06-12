@@ -1,17 +1,20 @@
-package com.gimnastiar.skinnyappbeta
+package com.gimnastiar.skinnyappbeta.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import com.gimnastiar.skinnyappbeta.R
 import com.gimnastiar.skinnyappbeta.databinding.ActivityMainBinding
 import com.gimnastiar.skinnyappbeta.ui.history.HistoryFragment
 import com.gimnastiar.skinnyappbeta.ui.homeFragment.HomeFragment
+import com.gimnastiar.skinnyappbeta.ui.setting.SettingActivity
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
+    private val dialog = ChoseImageButtomSheet()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +37,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDialog() {
-        val dialog = ChoseImageButtomSheet()
         dialog.show(supportFragmentManager, ChoseImageButtomSheet.TAG)
     }
 
@@ -46,6 +48,20 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+        binding.topAppBar.setOnMenuItemClickListener {
+            when(it.itemId) {
+                R.id.setting -> {
+                    val intent = Intent(this, SettingActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.favorite -> {
+                    Snackbar.make(findViewById(R.id.frame_layout), "Masih dalam pengembangan", Snackbar.LENGTH_SHORT)
+                        .show()
+                }
+            }
+            true
+        }
     }
 
     private fun replaceFragment(fragment: Fragment) {
@@ -53,5 +69,12 @@ class MainActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout, fragment)
         fragmentTransaction.commit()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        //handle finish()
+        finish()
     }
 }

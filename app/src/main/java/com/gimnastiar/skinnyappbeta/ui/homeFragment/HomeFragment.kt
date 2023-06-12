@@ -1,7 +1,10 @@
 package com.gimnastiar.skinnyappbeta.ui.homeFragment
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,11 +12,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.gimnastiar.skinnyappbeta.R
+import com.gimnastiar.skinnyappbeta.data.remote.model.Article
 import com.gimnastiar.skinnyappbeta.databinding.FragmentHomeBinding
+import com.gimnastiar.skinnyappbeta.ui.dapter.ArticleAdapter
 import com.gimnastiar.skinnyappbeta.ui.dapter.ImageSliderAdapter
+import com.gimnastiar.skinnyappbeta.ui.detailArticle.DetailArticleActivity
 import java.text.FieldPosition
 
 class HomeFragment : Fragment() {
@@ -40,11 +49,61 @@ class HomeFragment : Fragment() {
         imageViewsList.add(R.drawable.banner_dua)
         dots = ArrayList()
 
-        setAdapter(imageViewsList)
+        setSlideAdapter(imageViewsList)
+        setArticleAdapter()
+        showView(false)
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            showView(true)
+        }, 800)
 
     }
 
-    private fun setAdapter(listImage: ArrayList<Int>) {
+    private fun showView(visible: Boolean) {
+        binding.apply {
+            viewPager.isVisible = visible
+            dotsIndicator.isVisible = visible
+            tvArtikel.isVisible = visible
+            rvArticle.isVisible = visible
+            shimmerViewContainer.isVisible = !visible
+        }
+    }
+
+    private fun setArticleAdapter() {
+        binding.rvArticle.layoutManager = LinearLayoutManager(requireContext())
+        val articleAdapter = ArticleAdapter(getListArticle())
+        binding.rvArticle.adapter = articleAdapter
+
+        articleAdapter.setOnItemClickCallback(object : ArticleAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: Article) {
+                val dataDetail = Article(
+                    data.photo,
+                    data.title,
+                    data.description,
+                    data.textHandler
+                )
+                val intent = Intent(requireContext(), DetailArticleActivity::class.java)
+                intent.putExtra(DetailArticleActivity.TAG, dataDetail)
+                startActivity(intent)
+                Toast.makeText(requireContext(), "Artikel ${data.title}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun getListArticle(): ArrayList<Article> {
+        val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+        val dataTitle = resources.getStringArray(R.array.data_title_article)
+        val dataDescription = resources.getStringArray(R.array.data_description_article)
+        val dataTextHandel = resources.getStringArray(R.array.data_handle_article)
+        val listArticle = ArrayList<Article>()
+        for (i in dataTitle.indices) {
+            val hero = Article(dataPhoto.getResourceId(i, -1), dataTitle[i], dataDescription[i], dataTextHandel[i] )
+            listArticle.add(hero)
+        }
+        return listArticle
+    }
+
+    private fun setSlideAdapter(listImage: ArrayList<Int>) {
         val adapter = ImageSliderAdapter(listImage)
         binding.viewPager.adapter = adapter
 
@@ -58,11 +117,13 @@ class HomeFragment : Fragment() {
     }
 
     private fun selectedDot(position: Int) {
+        val color = ContextCompat.getColor(requireContext(), resources.getIdentifier("green_1", "color", requireActivity().packageName))
+        val color1 = ContextCompat.getColor(requireContext(), resources.getIdentifier("grey", "color", requireActivity().packageName))
         for(i in 0 until imageViewsList.size) {
             if(i == position) {
-                dots[i].setTextColor(ContextCompat.getColor(requireContext(), com.google.android.material.R.color.design_default_color_primary))
+                dots[i].setTextColor(color)
             } else {
-                dots[i].setTextColor(ContextCompat.getColor(requireContext(), com.google.android.material.R.color.design_default_color_secondary))
+                dots[i].setTextColor(color1)
             }
         }
     }
@@ -76,6 +137,7 @@ class HomeFragment : Fragment() {
             binding.dotsIndicator.addView(dots[i])
         }
     }
+
 
 
 }

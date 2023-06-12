@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detect.DetectActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animate_error"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="200dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/error" />
+
+        <TextView
+            android:id="@+id/tv_error"
+            style="@style/textH1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/btn_error_back"
+            app:layout_constraintEnd_toEndOf="@id/animate_error"
+            app:layout_constraintStart_toStartOf="@id/animate_error"
+            app:layout_constraintTop_toBottomOf="@id/animate_error"
+            tools:text="ERROR HTTP 500" />
+
+        <Button
+            android:id="@+id/btn_error_back"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/back"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/tv_error"
+            app:layout_constraintStart_toStartOf="@id/tv_error"
+            app:layout_constraintTop_toBottomOf="@id/tv_error" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_input"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/customImageView4Percent"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btn_retake"
+                style="@style/Widget.App.FloatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="?attr/colorOnSecondary"
+                android:text="@string/retake"
+                android:textColor="?attr/colorSecondaryVariant"
+                app:layout_constraintBottom_toBottomOf="@id/img_input"
+                app:layout_constraintEnd_toEndOf="@id/img_input" />
+
+            <TextView
+                android:id="@+id/tv_title_deases"
+                style="@style/textH1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@id/img_input"
+                app:layout_constraintStart_toStartOf="@id/img_input"
+                app:layout_constraintTop_toBottomOf="@id/img_input"
+                tools:text="Nama Penyakit" />
+
+            <TextView
+                android:id="@+id/tv_deases_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@id/tv_title_deases"
+                app:layout_constraintStart_toStartOf="@id/tv_title_deases"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_deases"
+                tools:text="@string/lorem" />
+
+            <TextView
+                android:id="@+id/tv_handling"
+                style="@style/textH1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/handling"
+                app:layout_constraintEnd_toEndOf="@id/tv_deases_description"
+                app:layout_constraintStart_toStartOf="@id/tv_deases_description"
+                app:layout_constraintTop_toBottomOf="@id/tv_deases_description" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_list_handlingDeases"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/tv_handling"
+                app:layout_constraintStart_toStartOf="@id/tv_handling"
+                app:layout_constraintTop_toBottomOf="@id/tv_handling"
+                tools:listitem="@layout/item_list_handling" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btn_save"
+        style="@style/Widget.App.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:backgroundTint="?attr/color"
+        android:contentDescription="@string/hutton_to_save_content"
+        android:text="@string/save"
+        android:textColor="?attr/colorSurface"
+        app:icon="@drawable/baseline_bookmark_border_24"
+        app:iconTint="?attr/colorSurface" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

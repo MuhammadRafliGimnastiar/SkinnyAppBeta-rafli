@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:liftOnScroll="true">
@@ -15,8 +16,13 @@
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            app:layout_anchor="@+id/appBarLayout"
+            app:layout_anchorGravity="center"
+            app:menu="@menu/top_app_bar_menu"
             app:title="@string/page_title"
-            app:menu="@menu/top_app_bar_menu" />
+            app:titleTextAppearance="@style/textH1"
+            app:navigationIcon="@drawable/logo_home_skinny"
+            app:navigationIconTint="?attr/color"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -35,9 +41,10 @@
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:layout_gravity="bottom"
         app:hideOnScroll="true"
+        android:minHeight="70dp"
         style="@style/Widget.Material3.BottomAppBar">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -55,10 +62,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/scan_icon"
-        app:layout_anchor="@id/bottomAppBar"
-        android:backgroundTint="?attr/colorOnSecondary"
-        app:fabSize="normal"/>
-
+        android:tint="?attr/color"
+        app:layout_anchor="@id/bottomAppBar" />
 
 
 

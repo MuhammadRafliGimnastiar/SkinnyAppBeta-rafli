@@ -7,10 +7,21 @@
     android:padding="16dp"
     tools:context=".ui.homeFragment.HomeFragment">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/shimmer_home" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
-        android:layout_width="411dp"
-        android:layout_height="175dp"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
         app:layout_constraintBaseline_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -30,21 +41,21 @@
         style="@style/textH1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:text="@string/article"
         app:layout_constraintEnd_toEndOf="@id/dots_indicator"
         app:layout_constraintStart_toStartOf="@id/dots_indicator"
         app:layout_constraintTop_toBottomOf="@id/dots_indicator" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="16dp"
         android:id="@+id/rv_article"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_artikel"
-        app:layout_constraintStart_toStartOf="@id/tv_artikel"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@id/tv_artikel"
-        tools:listitem="@layout/item_list_article"/>
+        app:layout_constraintStart_toStartOf="@id/tv_artikel"
+        app:layout_constraintTop_toBottomOf="@id/tv_artikel"
+        tools:listitem="@layout/item_list_article" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

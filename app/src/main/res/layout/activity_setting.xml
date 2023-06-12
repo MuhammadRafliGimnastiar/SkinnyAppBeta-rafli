@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.setting.SettingActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:liftOnScroll="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_anchor="@+id/appBarLayout"
+            app:layout_anchorGravity="center"
+            app:navigationIcon="@drawable/baseline_arrow_back_ios_24"
+            app:navigationIconTint="?attr/color"
+            app:title="Setting"
+            app:titleTextAppearance="@style/textH1" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/icon_theme"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:paddingRight="16dp"
+                android:src="@drawable/dark_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_theme"
+                style="@style/textH2set"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="start|center"
+                android:text="@string/theme"
+                app:layout_constraintBottom_toTopOf="@id/tv_theme_description"
+                app:layout_constraintEnd_toStartOf="@id/btn_theme"
+                app:layout_constraintStart_toEndOf="@id/icon_theme"
+                app:layout_constraintTop_toTopOf="@id/icon_theme" />
+
+            <TextView
+                android:id="@+id/tv_theme_description"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="start|center"
+                android:text="@string/theme_desc"
+                app:layout_constraintBottom_toBottomOf="@id/icon_theme"
+                app:layout_constraintEnd_toStartOf="@id/btn_theme"
+                app:layout_constraintStart_toStartOf="@id/tv_theme"
+                app:layout_constraintTop_toBottomOf="@id/tv_theme" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/btn_theme"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_language"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/icon_language"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:paddingRight="16dp"
+                android:src="@drawable/language_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_language"
+                style="@style/textH2set"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="start|center"
+                android:text="@string/language"
+                app:layout_constraintBottom_toTopOf="@id/tv_language_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/icon_language"
+                app:layout_constraintTop_toTopOf="@id/icon_language" />
+
+            <TextView
+                android:id="@+id/tv_language_description"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="start|center"
+                android:text="@string/language_desc"
+                app:layout_constraintBottom_toBottomOf="@id/icon_language"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_language"
+                app:layout_constraintTop_toBottomOf="@id/tv_language" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/icon_logout"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:paddingRight="16dp"
+                android:src="@drawable/log_out_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_logout"
+                style="@style/textH2set"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="start|center"
+                android:text="@string/log_out"
+                android:textColor="@color/red"
+                app:layout_constraintTop_toTopOf="@id/icon_logout"
+                app:layout_constraintStart_toEndOf="@id/icon_logout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/icon_logout"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
