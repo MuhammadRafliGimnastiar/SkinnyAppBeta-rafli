@@ -116,7 +116,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun errorHandler(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        Log.e("ERROR LOGIN", message)
+        Toast.makeText(requireContext(), "Harap Coba Lagi", Toast.LENGTH_SHORT).show()
     }
 
 }

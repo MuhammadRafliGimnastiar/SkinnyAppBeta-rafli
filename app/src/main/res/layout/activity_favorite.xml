@@ -27,6 +27,31 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animate_no_data"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/no_data" />
+
+    <TextView
+        android:id="@+id/tv_no_data"
+        style="@style/textH2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/animate_no_data"
+        app:layout_constraintStart_toStartOf="@id/animate_no_data"
+        app:layout_constraintTop_toBottomOf="@id/animate_no_data"
+        android:textColor="@color/grey"
+        android:text="@string/data_not_found" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"

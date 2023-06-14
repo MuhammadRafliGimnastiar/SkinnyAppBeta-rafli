@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Window
 import android.widget.Button
 import android.widget.CompoundButton
@@ -53,6 +54,10 @@ class SettingActivity : AppCompatActivity() {
     private fun buttonClick() {
         binding.btnLogout.setOnClickListener {
             showLogoutDialog()
+        }
+
+        binding.btnLanguage.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
         }
     }
 

@@ -182,7 +182,6 @@ class DetectActivity : AppCompatActivity() {
 //                            showView(false)
                         }
                         is Resource.Error -> {
-//                            errorHanler(it.data)
                             upToDbHandler(it.data, true)
                         }
                         is Resource.Success -> {
@@ -198,12 +197,11 @@ class DetectActivity : AppCompatActivity() {
 
     private fun upToDbHandler(message: String, error: Boolean) {
         if (error) {
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Gagal meniyimpan, coba lagi!", Toast.LENGTH_SHORT).show()
             binding.btnSave.setIconResource(R.drawable.baseline_bookmark_border_24)
             binding.btnSave.isEnabled = true
         } else{
-            Snackbar.make(findViewById(R.id.btn_save), message, Snackbar.LENGTH_SHORT)
-                .show()
+            Toast.makeText(this, "Success save to bookmark!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -242,20 +240,20 @@ class DetectActivity : AppCompatActivity() {
             })
 
         }
-        binding.imgInput.setOnClickListener{
-            if (height == 550) {
-                Log.d("Image Height", "IF Tinggi gambar: $height piksel")
-                val layoutParams = binding.imgInput.layoutParams
-                layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
-                binding.imgInput.layoutParams = layoutParams
-                height = 0
-            } else if (height == 0){
-                val layoutParams = binding.imgInput.layoutParams
-                layoutParams.height = 550
-                binding.imgInput.layoutParams = layoutParams
-                height = 550
-            }
-        }
+//        binding.imgInput.setOnClickListener{
+//            if (height == 550) {
+//                Log.d("Image Height", "IF Tinggi gambar: $height piksel")
+//                val layoutParams = binding.imgInput.layoutParams
+//                layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+//                binding.imgInput.layoutParams = layoutParams
+//                height = 0
+//            } else if (height == 0){
+//                val layoutParams = binding.imgInput.layoutParams
+//                layoutParams.height = 550
+//                binding.imgInput.layoutParams = layoutParams
+//                height = 550
+//            }
+//        }
     }
 
     private fun scanDialog(drawable: Drawable?) {
@@ -275,13 +273,6 @@ class DetectActivity : AppCompatActivity() {
 
 
         dialog.show()
-//        showView(false)
-//        Handler().postDelayed({
-//            lifecycleScope.launchWhenCreated {
-//                dialog.dismiss()
-//                showView(true)
-//            }
-//        }, MILISECON.toLong())
     }
 
 

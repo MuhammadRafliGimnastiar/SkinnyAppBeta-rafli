@@ -25,15 +25,6 @@
             app:shapeAppearanceOverlay="@style/customImageView4Percent"
             tools:src="@tools:sample/avatars" />
 
-        <Button
-            android:id="@+id/btn_favorite"
-            style="@style/Widget.Material3.Button.TextButton.Icon"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            app:icon="@drawable/baseline_favorite_24"
-            android:layout_marginEnd="-50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_title_favorite" />
 
 
         <TextView
@@ -48,7 +39,7 @@
             android:paddingEnd="16dp"
             android:paddingBottom="4dp"
             app:layout_constraintBottom_toTopOf="@id/tv_short_description"
-            app:layout_constraintEnd_toStartOf="@id/btn_favorite"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/img_favorite"
             app:layout_constraintTop_toTopOf="@id/img_favorite"
             tools:text="Article" />

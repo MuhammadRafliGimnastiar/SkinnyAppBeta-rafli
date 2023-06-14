@@ -1,6 +1,7 @@
 package com.gimnastiar.skinnyappbeta.ui.registerFragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -53,21 +54,12 @@ class RegisterFragment : Fragment() {
                 val cUsername = username != null && username.toString().isNotEmpty()
                 val cPassword = password != null && password.toString().isNotEmpty()
 
-//                val nameInput = name.toString().replace("\"", "")
-//                val usernameInput = username.toString().replace("\"", "")
-//                val passwordInput = password.toString().replace("\"", "")
-
                 if(cUser && cUsername && cPassword) {
                     registHandler(
                         name.toString().trim(),
                         username.toString().trim(),
                         password.toString().trim()
                     )
-//                    registHandler(
-//                        nameInput,
-//                        usernameInput,
-//                        passwordInput
-//                    )
                 } else {
                     Toast.makeText(requireContext(), "Harap masukan input terlebih dahulu!", Toast.LENGTH_SHORT).show()
                 }
@@ -122,7 +114,8 @@ class RegisterFragment : Fragment() {
     }
 
     private fun errorHandler(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        Log.e("Error Register", message)
+        Toast.makeText(requireContext(), "Harap coba lagi!", Toast.LENGTH_SHORT).show()
     }
 
     companion object {

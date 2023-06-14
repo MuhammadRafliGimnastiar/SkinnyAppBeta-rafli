@@ -36,12 +36,18 @@ class SplashFragment : Fragment() {
         pref = LoginPreference(requireContext())
         val data = pref.getUserData()
 
+        pref.showOnBoarding()
+        val onboarding = pref.getOnboarding()
+
         Handler().postDelayed({
             lifecycleScope.launchWhenCreated {
-                movePage(data)
+                if (onboarding) {
+                    movePage(data)
+                } else {
+                    findNavController().navigate(R.id.action_splashFragment_to_onBoardingFragment)
+                }
             }
         }, MILISECON.toLong())
-
     }
 
     private fun movePage(data: UserData) {

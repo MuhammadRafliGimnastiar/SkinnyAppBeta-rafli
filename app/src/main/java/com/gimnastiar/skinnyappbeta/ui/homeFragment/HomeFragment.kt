@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.gimnastiar.skinnyappbeta.R
+import com.gimnastiar.skinnyappbeta.data.local.Favorite
 import com.gimnastiar.skinnyappbeta.data.remote.model.Article
 import com.gimnastiar.skinnyappbeta.data.repository.LoginRepository
 import com.gimnastiar.skinnyappbeta.data.repository.Resource
@@ -27,6 +28,7 @@ import com.gimnastiar.skinnyappbeta.ui.ViewModelFactory
 import com.gimnastiar.skinnyappbeta.ui.dapter.ArticleAdapter
 import com.gimnastiar.skinnyappbeta.ui.dapter.ImageSliderAdapter
 import com.gimnastiar.skinnyappbeta.ui.detailArticle.DetailArticleActivity
+import com.gimnastiar.skinnyappbeta.ui.detailArticle.FavoriteViewModelFactory
 import com.gimnastiar.skinnyappbeta.utils.LoginPreference
 import java.text.FieldPosition
 
@@ -38,6 +40,7 @@ class HomeFragment : Fragment() {
     private lateinit var imageViewsList: ArrayList<Int>
     private lateinit var dots: ArrayList<TextView>
 
+    private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +52,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProvider(
+            this,
+            FavoriteViewModelFactory(requireContext())
+        ).get(HomeViewModel::class.java)
 
         imageViewsList = ArrayList()
         imageViewsList.add(R.drawable.banner_satu)
@@ -64,7 +72,6 @@ class HomeFragment : Fragment() {
         }, 800)
 
     }
-
 
     private fun showView(visible: Boolean) {
         binding.apply {
@@ -92,7 +99,7 @@ class HomeFragment : Fragment() {
                 val intent = Intent(requireContext(), DetailArticleActivity::class.java)
                 intent.putExtra(DetailArticleActivity.TAG, dataDetail)
                 startActivity(intent)
-                Toast.makeText(requireContext(), "Artikel ${data.title}", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "Artikel ${data.title}", Toast.LENGTH_SHORT).show()
             }
         })
     }
@@ -105,6 +112,8 @@ class HomeFragment : Fragment() {
         val listArticle = ArrayList<Article>()
         for (i in dataTitle.indices) {
             val hero = Article(dataPhoto.getResourceId(i, -1), dataTitle[i], dataDescription[i], dataTextHandel[i] )
+            val dataFavorite = Favorite(dataPhoto.getResourceId(i, -1), dataTitle[i], dataDescription[i], dataTextHandel[i], false)
+            viewModel.addData(dataFavorite)
             listArticle.add(hero)
         }
         return listArticle

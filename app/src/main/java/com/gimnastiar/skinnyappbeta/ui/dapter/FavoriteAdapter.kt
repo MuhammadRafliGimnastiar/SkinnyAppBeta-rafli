@@ -14,9 +14,6 @@ class FavoriteAdapter(private val list: List<Favorite>) : RecyclerView.Adapter<F
         this.onItemClickCallback = onItemClickCallback
     }
 
-    fun onButtonClick(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
-    }
 
     inner class ViewHolder(val view: ItemListFavoriteBinding) : RecyclerView.ViewHolder(view.root) {
         private val binding = view
@@ -45,8 +42,6 @@ class FavoriteAdapter(private val list: List<Favorite>) : RecyclerView.Adapter<F
         holder.bind(list[position])
 
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(list[holder.adapterPosition]) }
-
-        holder.view.imgFavorite.setOnClickListener { onItemClickCallback.onItemClicked(list[holder.adapterPosition]) }
     }
 
     interface OnItemClickCallback {

@@ -3,6 +3,8 @@ package com.gimnastiar.skinnyappbeta.ui.favorite
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,11 +35,36 @@ class FavoriteActivity : AppCompatActivity() {
         viewModel.getFavorite()
         setData()
 
+        binding.topAppBar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     private fun setData() {
         viewModel.favoriteData.observe(this) {
-            setAdapter(it)
+            if(it.size == 0) {
+                showRecycler(false)
+            } else {
+                setAdapter(it)
+                showRecycler(true)
+            }
+        }
+    }
+
+    private fun showRecycler(dataFound: Boolean) {
+        if (dataFound) {
+            binding.apply {
+                rvArticle.visibility = View.VISIBLE
+                animateNoData.visibility = View.GONE
+                tvNoData.visibility = View.GONE
+            }
+        } else {
+            binding.apply {
+                rvArticle.visibility = View.GONE
+                animateNoData.visibility = View.VISIBLE
+                tvNoData.visibility = View.VISIBLE
+            }
         }
     }
 
@@ -63,11 +90,6 @@ class FavoriteActivity : AppCompatActivity() {
             }
         })
 
-//        adapter.onButtonClick(object : FavoriteAdapter.OnItemClickCallback {
-//            override fun onItemClicked(data: Favorite) {
-//                Toast.makeText(this@FavoriteActivity, "hapur ${data.titleArticle}", Toast.LENGTH_SHORT).show()
-//            }
-//        })
 
     }
 

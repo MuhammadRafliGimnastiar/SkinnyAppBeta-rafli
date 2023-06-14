@@ -138,4 +138,15 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/loading" />
 
+    <TextView
+        android:id="@+id/tv_skinny_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/start_text_advice"
+        android:textAlignment="center"
+        android:textColor="@color/grey"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

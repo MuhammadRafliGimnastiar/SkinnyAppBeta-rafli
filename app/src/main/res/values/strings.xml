@@ -40,6 +40,15 @@
     <string name="logout_text_makesure">Apa kamu yakin ingin keluar?</string>
     <string name="no">Tidak</string>
     <string name="yes">Ya</string>
+    <string name="start">Mulai</string>
+    <string name="start_text_advice">Skinny Apps - Bangkit 2023</string>
+    <string name="title_onboarding_1">SKINNY APPS</string>
+    <string name="description_onboarding_1">Adalah aplikasi untuk deteksi penyakit kulit luar kamu yang sedang kamu alami</string>
+    <string name="title_onboarding_2">Artificial Intelligent</string>
+    <string name="description_onboarding_2">Setiap foto yang kamu scan, akan kami olah menggunakan model Kecerdasan Buatan yang sudah terlatih</string>
+    <string name="title_onboarding_3">Penanganan</string>
+    <string name="description_onboarding_3">Kami juga sudah menyedian saran penanganan untuk setiap penyakit yang kamu alami</string>
+    <string name="data_not_found">Favorite andra masih kosong</string>
 
     <integer-array name="data_photo">
         <item>@drawable/black_head</item>

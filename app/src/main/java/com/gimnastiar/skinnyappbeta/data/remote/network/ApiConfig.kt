@@ -1,6 +1,5 @@
 package com.gimnastiar.skinnyappbeta.data.remote.network
 
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -14,7 +13,7 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://50df-111-95-158-90.ngrok-free.app")
+            .baseUrl("https://skinnyc-6k3ghra5nq-uc.a.run.app")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

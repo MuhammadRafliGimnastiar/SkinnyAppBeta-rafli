@@ -57,8 +57,6 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 R.id.favorite -> {
-//                    Snackbar.make(findViewById(R.id.frame_layout), "Masih dalam pengembangan", Snackbar.LENGTH_SHORT)
-//                        .show()
                     startActivity(Intent(this@MainActivity, FavoriteActivity::class.java))
                 }
             }
@@ -77,6 +75,6 @@ class MainActivity : AppCompatActivity() {
         super.onBackPressed()
 
         //handle finish()
-        finish()
+//        finish()
     }
 }

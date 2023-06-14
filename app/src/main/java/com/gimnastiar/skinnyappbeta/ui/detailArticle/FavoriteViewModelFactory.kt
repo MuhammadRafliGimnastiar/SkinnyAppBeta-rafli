@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.gimnastiar.skinnyappbeta.di.Injection
 import com.gimnastiar.skinnyappbeta.ui.favorite.FavoriteViewModel
 import com.gimnastiar.skinnyappbeta.ui.history.historyData.HistoryDataViewModel
+import com.gimnastiar.skinnyappbeta.ui.homeFragment.HomeViewModel
 
 class FavoriteViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
 
@@ -17,6 +18,10 @@ class FavoriteViewModelFactory(private val context: Context) : ViewModelProvider
         if (modelClass.isAssignableFrom(FavoriteViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
             return FavoriteViewModel(Injection.provideLocalRepo(context)) as T
+        }
+        if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return HomeViewModel(Injection.provideLocalRepo(context)) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

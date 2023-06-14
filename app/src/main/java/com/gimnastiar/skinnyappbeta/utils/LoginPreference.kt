@@ -31,12 +31,21 @@ class LoginPreference(context: Context) {
         return data
     }
 
-    fun changeToken(newToken: String) {
+    fun hiddenOnBoarding() {
         val editor = preference.edit()
-        editor.putString("token", newToken)
+        editor.putBoolean("onboarding", true)
         editor.apply()
     }
 
+    fun showOnBoarding() {
+        val editor = preference.edit()
+        editor.putBoolean("onboarding", false)
+        editor.apply()
+    }
+
+    fun getOnboarding() : Boolean {
+        return preference.getBoolean("onboarding", false)
+    }
 
     fun getToken(): String? {
         val token = preference.getString("token", null)
