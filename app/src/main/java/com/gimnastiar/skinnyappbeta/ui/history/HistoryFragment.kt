@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
@@ -48,16 +49,22 @@ class HistoryFragment : Fragment() {
     private fun setName(data: UserData) {
         if (data.name != null) {
             binding.apply {
-                tvName.text = data.name
-                tvEmail.text = data.username
+                tvName.text = data.username
             }
         }
     }
 
     private fun buttonclick() {
-        binding.btnSetting.setOnClickListener {
-            val intent = Intent(requireContext(), SettingActivity::class.java)
-            startActivity(intent)
+        with(binding) {
+            btnSetting.setOnClickListener {
+                val intent = Intent(requireContext(), SettingActivity::class.java)
+                startActivity(intent)
+            }
+
+            tvProfileMore.setOnClickListener {
+                Toast.makeText(requireContext(), "Masih dalam pengembangan!", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 

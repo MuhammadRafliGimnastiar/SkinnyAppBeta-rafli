@@ -35,4 +35,6 @@ class FrontActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
     }
+
+
 }

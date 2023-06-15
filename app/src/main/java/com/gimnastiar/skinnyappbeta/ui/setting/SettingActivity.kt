@@ -1,5 +1,6 @@
 package com.gimnastiar.skinnyappbeta.ui.setting
 
+import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
@@ -71,6 +72,11 @@ class SettingActivity : AppCompatActivity() {
 
         val btnYes: Button = dialog.findViewById(R.id.btn_yes)
         val btnNo: Button = dialog.findViewById(R.id.btn_no)
+
+        val resultIntent = Intent()
+        val value = "finishApp"
+        resultIntent.putExtra("key", value)
+        setResult(Activity.RESULT_OK, resultIntent)
 
         btnYes.setOnClickListener{
             loginPref.removeLogin()

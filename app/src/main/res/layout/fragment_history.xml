@@ -24,8 +24,8 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/img_profile"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:background="@color/grey_1"
                 android:scaleType="centerInside"
                 android:src="@drawable/user_icon"
@@ -39,21 +39,22 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
+                android:gravity="start|center"
                 android:text="@string/user_name"
                 android:maxLines="1"
-                app:layout_constraintBottom_toTopOf="@id/tv_email"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/img_profile"
                 app:layout_constraintTop_toTopOf="@id/img_profile" />
 
             <TextView
-                android:id="@+id/tv_email"
+                android:id="@+id/tv_profile_more"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:paddingStart="16dp"
                 android:paddingTop="4dp"
-                android:text="@string/email"
-                app:layout_constraintBottom_toBottomOf="@id/img_profile"
+                android:text="@string/profile_more"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="@id/tv_name"
                 app:layout_constraintStart_toEndOf="@id/img_profile"
                 app:layout_constraintTop_toBottomOf="@id/tv_name" />

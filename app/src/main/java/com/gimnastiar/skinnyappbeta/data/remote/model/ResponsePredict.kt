@@ -6,14 +6,15 @@ import kotlinx.parcelize.Parcelize
 
 data class ResponsePredict(
 
-	@field:SerializedName("msg")
-	val msg: String,
-
 	@field:SerializedName("Penanganan")
 	val penanganan: Penanganan,
 
-	@field:SerializedName("error")
-	val error: Boolean
+	@field:SerializedName("Error")
+	val error: Boolean,
+
+	@field:SerializedName("Eessage")
+	val message: String,
+
 )
 
 @Parcelize

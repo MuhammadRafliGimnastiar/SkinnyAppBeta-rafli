@@ -18,7 +18,12 @@ class LoginPreference(context: Context) {
     }
 
     fun removeLogin() {
-        val editor = preference.edit().clear()
+        val editor = preference.edit()
+//        val editor = preference.edit().clear()
+
+        editor.remove("name")
+        editor.remove("username")
+        editor.remove("token")
         editor.apply()
     }
 

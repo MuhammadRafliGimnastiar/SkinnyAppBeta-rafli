@@ -80,8 +80,9 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="?attr/colorOnSecondary"
-                android:text="@string/retake"
                 android:textColor="?attr/colorSecondaryVariant"
+                app:icon="@drawable/retake_camera_icon"
+                app:iconTint="?attr/colorSecondaryVariant"
                 app:layout_constraintBottom_toBottomOf="@id/img_input"
                 app:layout_constraintEnd_toEndOf="@id/img_input" />
 
@@ -133,6 +134,16 @@
 
     </ScrollView>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_medicine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/medecine"
+        />
+
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/btn_save"
         style="@style/Widget.App.FloatingActionButton"
@@ -142,8 +153,6 @@
         android:layout_margin="16dp"
         android:backgroundTint="?attr/color"
         android:contentDescription="@string/hutton_to_save_content"
-        android:text="@string/save"
-        android:textColor="?attr/colorSurface"
         app:icon="@drawable/baseline_bookmark_border_24"
         app:iconTint="?attr/colorSurface" />
 

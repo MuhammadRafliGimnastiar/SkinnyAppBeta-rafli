@@ -7,6 +7,9 @@ import com.gimnastiar.skinnyappbeta.data.remote.model.ResponseLogin
 import com.gimnastiar.skinnyappbeta.data.remote.model.ResponseRegister
 import com.gimnastiar.skinnyappbeta.data.remote.model.ResponseTest
 import com.gimnastiar.skinnyappbeta.data.remote.network.ApiService
+import com.google.gson.Gson
+import java.io.PrintWriter
+import java.io.StringWriter
 
 class LoginRepository(
     private val apiService: ApiService
@@ -65,3 +68,8 @@ class LoginRepository(
 
 
 }
+
+data class ErrorResponse(
+    val Error: Boolean,
+    val message: String?
+)

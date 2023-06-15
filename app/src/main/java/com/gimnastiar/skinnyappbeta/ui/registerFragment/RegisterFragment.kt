@@ -1,6 +1,8 @@
 package com.gimnastiar.skinnyappbeta.ui.registerFragment
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -41,6 +43,22 @@ class RegisterFragment : Fragment() {
 
 
         buttonClick()
+        passwordListener()
+    }
+
+    fun passwordListener() {
+        binding.passwordInput.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                binding.passwordLayout.isErrorEnabled = false
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+        })
     }
 
     private fun buttonClick() {
@@ -115,7 +133,7 @@ class RegisterFragment : Fragment() {
 
     private fun errorHandler(message: String) {
         Log.e("Error Register", message)
-        Toast.makeText(requireContext(), "Harap coba lagi!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
     companion object {

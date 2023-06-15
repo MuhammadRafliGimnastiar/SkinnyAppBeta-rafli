@@ -1,5 +1,6 @@
 package com.gimnastiar.skinnyappbeta.ui
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId) {
                 R.id.setting -> {
                     val intent = Intent(this, SettingActivity::class.java)
-                    startActivity(intent)
+                    startActivityForResult(intent, 123)
                 }
                 R.id.favorite -> {
                     startActivity(Intent(this@MainActivity, FavoriteActivity::class.java))
@@ -69,6 +70,18 @@ class MainActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout, fragment)
         fragmentTransaction.commit()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 123 && resultCode == Activity.RESULT_OK) {
+            val value = data?.getStringExtra("key")
+            if (value == "finsihApp") {
+                finish()
+            }
+            // Lakukan sesuatu dengan nilai yang dikirim kembali
+        }
     }
 
     override fun onBackPressed() {

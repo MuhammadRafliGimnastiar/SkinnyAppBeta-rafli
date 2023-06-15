@@ -27,16 +27,18 @@ class PredictRepository(
         try {
             val response = apiService.getPredict(photo, token)
             if (response.error){
-                emit(Resource.Error(response.msg))
-                Log.i("Predict Test", "errorr ${response.msg}")
+                val errorMessage = response.message!!
+                emit(Resource.Error(errorMessage))
+                Log.i("Predict Test", "errorr $errorMessage")
             } else {
                 emit(Resource.Success(response))
-                Log.i("Predict Test", "succsess ${response.msg}")
+                Log.i("Predict Test", "succsess ${response.message}")
             }
         } catch (e: Exception) {
             e.printStackTrace()
             emit(Resource.Error(e.message.toString()))
             Log.i("Predict Test exception", "exception ${e.message}")
+            Log.i("Predict Test exception", "exception ${e.printStackTrace()}")
         }
     }
 
@@ -48,19 +50,24 @@ class PredictRepository(
             val response = apiService.getHistory(username)
             if (response.error){
                 emit(Resource.Error(response.msg))
-                Log.i("Predict Test", "errorr ? ${response.error}")
-                Log.i("Predict Test", "errorr ${response.msg}")
+                Log.i("History Test", "errorr ? ${response.error}")
+                Log.i("History Test", "errorr ${response.msg}")
             } else {
                 emit(Resource.Success(response))
-                Log.i("Predict Test", "sukses")
-                Log.i("Predict Test", "errorr ${response.msg}")
+                Log.i("History Test", "sukses")
+                Log.i("History Test", "errorr ${response.msg}")
             }
         } catch (e: Exception) {
             e.printStackTrace()
             emit(Resource.Error(e.message.toString()))
-            Log.i("Predict Test exception", "exception ${e.message}")
+//            Log.i("History Test exception", "exception ${e.message}")
         }
     }
+
+    suspend fun getAllHistory2(
+        username: String
+    ) : Result<HistoryResponse> =
+        proceed { apiService.getHistory(username) }
 
     fun addHistory(
         username: String,

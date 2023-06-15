@@ -58,7 +58,7 @@ class MyInputEditText : TextInputEditText {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                textInputLayout.isErrorEnabled = false
+//                textInputLayout.isErrorEnabled = false
                 handler.removeCallbacks(inputFinishChecker)
             }
 

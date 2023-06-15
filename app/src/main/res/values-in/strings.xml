@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SkinnyAppBeta</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="page_title">SKINNY\n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose">Pilih</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
+    <string name="article">Artikel</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in massa metus. In at urna ut nisi eleifend gravida ac congue turpis. Nulla a metus eget purus laoreet pharetra in id turpis. Aliquam eget massa euismod, elementum ante quis, tincidunt velit. Curabitur eget nisi vehicula tortor dignissim faucibus. Quisque eget massa ac dolor imperdiet rhoncus. Pellentesque ullamcorper vel metus id pellentesque. Vestibulum aliquam malesuada velit, sit amet blandit risus venenatis eu.</string>
+    <string name="user_name">Muhammad Rafli Gimnastiar</string>
+    <string name="email">gimnastiarrafli@gmail.com</string>
+    <string name="setting">Setting</string>
+    <string name="warning">PERHATIAN</string>
+    <string name="warning_image_description">Untuk mendapatkan hasil maksimal, harap untuk mengambil gambar area kulit yang sedang mengalami sakit saja!</string>
+    <string name="next">Lanjutkan</string>
+    <string name="retake">Ambil Ulang</string>
+    <string name="handling">Cara Penanganan!</string>
+    <string name="save">Simpan</string>
+    <string name="hutton_to_save_content">Button untuk menyimpan hasil deteksi</string>
+    <string name="back">Kembali</string>
+    <string name="medecine">Obat</string>
+    <string name="tab_text_1">Histori Kamu</string>
+    <string name="tab_text_2">Obat</string>
+    <string name="theme">Tema</string>
+    <string name="theme_desc">Tema Gelap belum disarankan!</string>
+    <string name="language">Bahasa</string>
+    <string name="language_desc">Choose English or Bahasa</string>
+    <string name="log_out">Keluar</string>
+    <string name="add_favorite_desc">button to add favorite article</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="full_name">Full Name</string>
+    <string name="register">Register</string>
+    <string name="password_wrong">disarankan minimun 6 karakter</string>
+    <string name="logout_text_makesure">Apa kamu yakin ingin keluar?</string>
+    <string name="no">Tidak</string>
+    <string name="yes">Ya</string>
+    <string name="start">Mulai</string>
+    <string name="start_text_advice">Skinny Apps - Bangkit 2023</string>
+    <string name="title_onboarding_1">SKINNY APPS</string>
+    <string name="description_onboarding_1">Adalah aplikasi untuk deteksi penyakit kulit luar kamu yang sedang kamu alami</string>
+    <string name="title_onboarding_2">Artificial Intelligent</string>
+    <string name="description_onboarding_2">Setiap foto yang kamu scan, akan kami olah menggunakan model Kecerdasan Buatan yang sudah terlatih</string>
+    <string name="title_onboarding_3">Penanganan</string>
+    <string name="description_onboarding_3">Kami juga sudah menyedian saran penanganan untuk setiap penyakit yang kamu alami</string>
+    <string name="data_not_found">Favorite andra masih kosong</string>
+    <string name="profile_more">Lihat Profile</string>
+
+    <integer-array name="data_photo">
+        <item>@drawable/black_head</item>
+        <item>@drawable/eksim</item>
+        <item>@drawable/panu</item>
+        <item>@drawable/jerawat</item>
+        <item>@drawable/flek_hitam</item>
+        <item>@drawable/milia</item>
+        <item>@drawable/kurap</item>
+        <item>@drawable/herpes</item>
+    </integer-array>
+
+    <string-array name="data_title_article">
+        <item>Apa Itu BlackHead?</item>
+        <item>Cara Mencegah Kemunculan Eksim</item>
+        <item>Gejala Yang Perlu Kamu Ketahui Tentang Panu</item>
+        <item>Cara Mencegah Munculnya Jerawat</item>
+        <item>Penyebab Munculnya Flek hitam</item>
+        <item>Cara Mencegah munculnya Milia</item>
+        <item>Berkenalan Lebih Dalam Dengan Kurap</item>
+        <item>Gejala Penyakit Herpes</item>
+    </string-array>
+
+    <string-array name="data_description_article">
+        <item>Blackhead, juga dikenal sebagai komedo terbuka, adalah kondisi kulit yang umum terjadi akibat penyumbatan pori-pori kulit. Penyumbatan tersebut terjadi ketika kotoran, sel kulit mati, minyak alami kulit (sebum), dan bakteri terperangkap di dalam pori-pori dan mengoksidasi ketika terkena udara. Ini menghasilkan penumpukan bintik-bintik hitam kecil yang sering muncul di area hidung, dahi, dan dagu.</item>
+        <item>Eksim, yang juga dikenal sebagai dermatitis, adalah kondisi peradangan kulit yang menyebabkan gatal, kemerahan, kering, dan ruam pada kulit. Ada beberapa jenis eksim, termasuk dermatitis atopik, dermatitis kontak, dan dermatitis seboroik. Berikut ini adalah deskripsi umum tentang eksim beserta cara pencegahan, penanganan, dan obat yang umum digunakan.</item>
+        <item>Panu, juga dikenal sebagai tinea versicolor atau dermatomikosis superfisialis, adalah infeksi kulit yang disebabkan oleh jamur. Infeksi ini biasanya disebabkan oleh jamur Malassezia yang biasanya ada di kulit manusia tanpa menyebabkan masalah. Namun, dalam beberapa kondisi, jamur ini dapat berkembang biak secara berlebihan dan menyebabkan gejala panu.</item>
+        <item>Penyakit jerawat adalah kondisi kulit yang umum terjadi, terutama pada masa remaja, meskipun dapat juga terjadi pada usia dewasa. Jerawat terjadi ketika folikel rambut tersumbat oleh minyak dan sel kulit mati, sehingga menyebabkan peradangan dan timbulnya benjolan merah atau komedo di kulit. Beberapa faktor yang dapat mempengaruhi perkembangan jerawat meliputi perubahan hormon, produksi minyak berlebih di kulit, bakteri Propionibacterium acnes, dan faktor genetik.</item>
+        <item>Flek hitam adalah suatu kondisi kulit di mana terdapat bercak-bercak gelap yang muncul pada permukaan kulit. Kondisi ini juga dikenal sebagai hiperpigmentasi, di mana melanin, pigmen yang memberikan warna pada kulit, terakumulasi di area tertentu.</item>
+        <item>Penyakit Milia adalah suatu kondisi kulit yang ditandai oleh adanya benjolan kecil berwarna putih atau kekuningan pada permukaan kulit. Benjolan-benjolan ini muncul akibat penumpukan keratin (protein yang ditemukan pada kulit) di dalam pori-pori kulit. Milia biasanya terjadi di wajah, terutama di sekitar area mata, pipi, dan hidung, namun juga dapat muncul di bagian tubuh lainnya.</item>
+        <item>Penyakit kurap, juga dikenal sebagai tinea atau dermatofitosis, adalah infeksi kulit yang disebabkan oleh jamur dermatofit. Infeksi ini umumnya terjadi pada kulit, kuku, dan rambut. Kurap biasanya menyebar melalui kontak langsung dengan orang atau hewan yang terinfeksi, atau melalui kontak dengan benda yang terkontaminasi.</item>
+        <item>Herpes adalah penyakit yang disebabkan oleh virus herpes simplex. Ada dua jenis virus herpes simplex yang umum: herpes simplex tipe 1 (HSV-1) dan herpes simplex tipe 2 (HSV-2). HSV-1 biasanya terkait dengan infeksi pada area mulut dan bibir, sementara HSV-2 biasanya terkait dengan infeksi pada area kelamin.</item>
+    </string-array>
+
+    <string-array name="data_handle_article">
+        <item>Pencegahan blackhead melibatkan menjaga kebersihan kulit dan mengendalikan produksi sebum. Berikut beberapa langkah yang dapat diambil untuk mencegah blackhead:\n
+
+            1. Menjaga kebersihan kulit: Cuci wajah dua kali sehari dengan pembersih yang lembut untuk menghilangkan kotoran, minyak, dan sel kulit mati yang dapat menyumbat pori-pori.\n
+
+            2. Menggunakan produk bebas minyak: Pilih produk perawatan kulit yang ringan dan bebas minyak untuk mencegah penumpukan sebum yang berlebihan.\n
+
+            3. Menghindari penggunaan kosmetik berat: Jika Anda menggunakan makeup, pastikan untuk membersihkan wajah dengan baik setelahnya dan hindari penggunaan produk yang menyumbat pori-pori.\n
+
+            4. Eksfoliasi secara teratur: Gunakan eksfoliator lembut untuk menghilangkan sel kulit mati dan mengurangi kemungkinan penyumbatan pori-pori.\n
+
+            5. Hindari pemakaian minyak berat: Jauhi produk-produk minyak berat atau minyak esensial yang dapat meningkatkan produksi sebum dan menyumbat pori-pori.\n
+        </item>
+        <item>Eksim adalah kelainan kulit yang ditandai dengan peradangan dan iritasi. Gejalanya termasuk kulit kemerahan, gatal, kering, bersisik, dan dapat terjadi ruam. Penyebab pasti eksim tidak diketahui, tetapi faktor-faktor seperti faktor genetik, alergi, sistem kekebalan tubuh yang terganggu, dan faktor lingkungan dapat berkontribusi pada perkembangan penyakit ini.\n\n
+
+            Cara Pencegahan:\n
+            1. Identifikasi pemicu: Coba cari tahu faktor apa yang memicu gejala eksim Anda, seperti alergen, iritan kulit, atau stres. Hindari faktor-faktor ini sebisa mungkin.\n
+            2. Menjaga kelembapan kulit: Gunakan pelembap secara teratur untuk menjaga kelembapan kulit dan menghindari kulit kering.\n
+            3. Hindari sabun keras dan bahan kimia yang iritatif: Gunakan sabun ringan, bebas pewangi, dan hindari penggunaan produk yang mengandung bahan kimia yang dapat menyebabkan iritasi pada kulit.\n
+            4. Hindari panas berlebih dan kelembaban tinggi: Suhu yang panas dan kelembaban dapat memperburuk gejala eksim. Usahakan untuk menjaga kulit tetap sejuk dan kering.\n
+            5. Hindari stres: Stres dapat memperburuk eksim. Cari cara untuk mengelola stres dengan baik, seperti dengan meditasi, olahraga, atau aktivitas yang menenangkan.\n
+        </item>
+        <item>Gejala umum panu meliputi:\n
+
+            1. Perubahan warna kulit: Biasanya terjadi bercak-bercak putih, merah, cokelat, atau kemerahan di kulit.\n
+            2. Gatal: Daerah yang terinfeksi seringkali gatal, terutama ketika Anda berkeringat atau dalam kondisi panas.\n
+            3. Skalp atau pengelupasan: Kulit yang terinfeksi dapat terkelupas atau bersisik.\n
+        </item>
+        <item>Cara pencegahan jerawat meliputi:\n
+
+            1. Membersihkan kulit dengan lembut: Gunakan pembersih wajah yang lembut dua kali sehari untuk menghilangkan kotoran, minyak, dan sel kulit mati dari kulit wajah.\n
+
+            2. Hindari memencet jerawat: Memencet jerawat dapat menyebabkan peradangan yang lebih parah, luka, dan risiko infeksi.\n
+
+            3. Hindari produk berminyak: Gunakan produk kosmetik yang tidak menyumbat pori-pori dan bebas minyak (non-comedogenic).\n
+
+            4. Jaga kebersihan kulit: Cuci handuk, sarung bantal, dan sikat rambut secara teratur untuk menghindari penumpukan kotoran dan bakteri.\n
+
+            5. Hindari paparan sinar matahari berlebihan: Gunakan tabir surya dengan SPF yang tepat dan hindari paparan sinar matahari langsung dalam waktu yang lama.\n
+        </item>
+        <item>Penyebab flek hitam dapat bervariasi, namun yang paling umum adalah paparan sinar matahari berlebihan. Paparan sinar matahari dapat merangsang produksi melanin secara berlebihan, terutama pada individu dengan kulit yang lebih gelap. Selain itu, faktor-faktor seperti perubahan hormon, penuaan, jerawat, peradangan kulit, dan reaksi alergi juga dapat menyebabkan flek hitam\n.</item>
+        <item>Cara Pencegahan Milia:\n
+            1. Rajin membersihkan wajah: Membersihkan wajah dengan lembut menggunakan pembersih yang lembut dan tidak menyebabkan iritasi.\n
+            2. Hindari penggunaan produk perawatan kulit yang mengandung bahan berat atau komedogenik: Seperti minyak mineral atau petroleum jelly.\n
+            3. Gunakan produk pelembap: Produk pelembab yang digunakan adalah produk yang ringan dan tidak berminyak untuk menjaga kelembapan kulit.\n
+            4. Hindari paparan sinar matahari langsung tanpa perlindungan: Gunakan tabir surya dengan SPF yang cukup.\n
+            5. Hindari menggaruk atau memencet benjolan kulit: Hal ini dapat meningkatkan risiko infeksi.
+        </item>
+        <item>Deskripsi penyakit kurap:\n
+            - Gejala umumnya termasuk ruam merah: Ruam ini bersifat gatal dan bersisik di area yang terinfeksi.\n
+            - Infeksi kulit biasanya terlihat seperti cincin: Gejala cincin ini memiliki tepi yang merah dan terangkat.\n
+            - Jika kurap menyerang kuku: Kuku dapat menjadi kusam, tebal, atau rapuh.\n
+            - Jika kurap menyerang kulit kepala: Gejalanya termasuk gatal, kulit kepala yang terkelupas, dan kerontokan rambut.\n\n
+
+            Cara pencegahan penyakit kurap:\n
+            - Jaga kebersihan diri: Dengan rajin mencuci tangan dan menjaga kulit tetap kering.\n
+            - Hindari berbagi barang pribadi: Seperti handuk, sikat rambut, dan alat cukur dengan orang lain.\n
+            - Gunakan alas kaki yang bersih dan kering: Saat berada di kolam renang umum, sauna, atau ruang ganti.\n
+            - Hindari kontak langsung dengan hewan peliharaan yang memiliki tanda-tanda infeksi kulit: Hal ini untuk mencegah penyebaran infeksi.\n
+        </item>
+        <item>Gejala penyakit herpes meliputi:\n
+
+            1. Herpes oral (HSV-1): Muncul luka dingin atau lecet di sekitar mulut dan bibir. Gejalanya dapat berupa rasa terbakar atau gatal sebelum munculnya luka, dan kemudian luka tersebut dapat menjadi berkerak sebelum sembuh.\n
+            2. Herpes genital (HSV-2): Muncul luka dingin atau lecet di area kelamin atau sekitarnya. Gejala awalnya mirip dengan flu, seperti demam, nyeri otot, dan pembengkakan kelenjar getah bening. Kemudian, luka-luka tersebut muncul dan dapat menyebabkan rasa nyeri, gatal, atau terbakar.\n\n
+
+            Cara pencegahan herpes meliputi:\n
+            1. Hindari kontak langsung: Dengan lesi atau luka pada orang yang terinfeksi herpes.\n
+            2. Gunakan pengaman: Miisalnya kondom, saat berhubungan seks untuk mengurangi risiko penularan herpes genital.\n
+            3. Jaga kebersihan diri: Dengan sering mencuci tangan, terutama setelah menyentuh area yang terinfeksi herpes.\n
+            4. Hindari berbagi barang-barang pribadi: Seperti sikat gigi, handuk, atau alat makan dengan orang yang terinfeksi.\n
+            </item>
+    </string-array>
+</resources>

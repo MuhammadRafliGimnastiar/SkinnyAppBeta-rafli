@@ -58,7 +58,7 @@ class ChoseImageButtomSheet : BottomSheetDialogFragment() {
         timer = object : CountDownTimer(15_000, 100) {
 
             override fun onTick(remaining: Long) {
-                btn_next.text = "Lanjutkan dalam ${remaining.toString().getOrNull(0).toString()}"
+                btn_next.text = "Lanjutkan dalam ${remaining/1000}"
             }
 
             override fun onFinish() {

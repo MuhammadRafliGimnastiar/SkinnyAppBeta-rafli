@@ -47,6 +47,7 @@ class OnBoardingFragment : Fragment() {
         binding.viewPager.adapter = OnBoardingFragmentAdapter(requireActivity(), requireContext())
         TabLayoutMediator(binding.pageIndicator, binding.viewPager) { _, _ -> }.attach()
         binding.viewPager.offscreenPageLimit = 1
+
     }
 
 }

@@ -101,6 +101,7 @@ class DetectActivity : AppCompatActivity() {
         binding.apply {
             imgInput.isVisible = false
             btnRetake.isVisible = false
+            btnMedicine.isVisible = false
             tvTitleDeases.isVisible = false
             tvDeasesDescription.isVisible = false
             tvHandling.isVisible = false
@@ -126,7 +127,8 @@ class DetectActivity : AppCompatActivity() {
                         }
                         is Resource.Success -> {
                             showView(true)
-                            successHandler(result.data.penanganan)
+                                successHandler(result.data.penanganan)
+
                         }
                     }
                 }
@@ -152,7 +154,7 @@ class DetectActivity : AppCompatActivity() {
 
     private fun successHandler(data: Penanganan){
         Log.i("Predict Test", "data success ${data.terdeteksiJenis}")
-        val adapter = HandlingAdapter(data.judulPenanganan, data.penangananYangDapatDilakukan)
+        val adapter = HandlingAdapter(data.judulPenanganan!!, data.penangananYangDapatDilakukan!!)
         binding.apply{
             tvTitleDeases.text = data.terdeteksiJenis
             tvDeasesDescription.text = data.deskripsi
@@ -173,7 +175,7 @@ class DetectActivity : AppCompatActivity() {
             viewModel.addToHistory(
                 username,
                 fileMultipart,
-                data.terdeteksiJenis,
+                data.terdeteksiJenis!!,
                 data.classTerprediksi!!
             ).observe(this@DetectActivity) {
                 if (it != null) {
@@ -209,6 +211,9 @@ class DetectActivity : AppCompatActivity() {
         binding.btnRetake.setOnClickListener{
             showChooseImageDialog()
         }
+        binding.btnMedicine.setOnClickListener {
+            Toast.makeText(this, "Belom jadi boss, sabar yaa!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun showChooseImageDialog() {
@@ -240,20 +245,20 @@ class DetectActivity : AppCompatActivity() {
             })
 
         }
-//        binding.imgInput.setOnClickListener{
-//            if (height == 550) {
-//                Log.d("Image Height", "IF Tinggi gambar: $height piksel")
-//                val layoutParams = binding.imgInput.layoutParams
-//                layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
-//                binding.imgInput.layoutParams = layoutParams
-//                height = 0
-//            } else if (height == 0){
-//                val layoutParams = binding.imgInput.layoutParams
-//                layoutParams.height = 550
-//                binding.imgInput.layoutParams = layoutParams
-//                height = 550
-//            }
-//        }
+        binding.imgInput.setOnClickListener{
+            if (height == 550) {
+                Log.d("Image Height", "IF Tinggi gambar: $height piksel")
+                val layoutParams = binding.imgInput.layoutParams
+                layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+                binding.imgInput.layoutParams = layoutParams
+                height = 0
+            } else if (height == 0){
+                val layoutParams = binding.imgInput.layoutParams
+                layoutParams.height = 550
+                binding.imgInput.layoutParams = layoutParams
+                height = 550
+            }
+        }
     }
 
     private fun scanDialog(drawable: Drawable?) {
@@ -280,6 +285,7 @@ class DetectActivity : AppCompatActivity() {
         binding.apply {
             imgInput.isVisible = data
             btnRetake.isVisible = data
+            btnMedicine.isVisible = data
             tvTitleDeases.isVisible = data
             tvDeasesDescription.isVisible = data
             tvHandling.isVisible = data

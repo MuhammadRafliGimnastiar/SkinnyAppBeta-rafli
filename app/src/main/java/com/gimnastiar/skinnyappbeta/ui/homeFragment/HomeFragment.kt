@@ -59,8 +59,9 @@ class HomeFragment : Fragment() {
         ).get(HomeViewModel::class.java)
 
         imageViewsList = ArrayList()
-        imageViewsList.add(R.drawable.banner_satu)
+        imageViewsList.add(R.drawable.banner_tiga)
         imageViewsList.add(R.drawable.banner_dua)
+        imageViewsList.add(R.drawable.banner_satu)
         dots = ArrayList()
 
         setSlideAdapter(imageViewsList)

@@ -36,7 +36,7 @@ class SplashFragment : Fragment() {
         pref = LoginPreference(requireContext())
         val data = pref.getUserData()
 
-        pref.showOnBoarding()
+//        pref.showOnBoarding()
         val onboarding = pref.getOnboarding()
 
         Handler().postDelayed({
