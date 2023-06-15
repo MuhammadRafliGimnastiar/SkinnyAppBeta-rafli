@@ -212,7 +212,7 @@ class DetectActivity : AppCompatActivity() {
             showChooseImageDialog()
         }
         binding.btnMedicine.setOnClickListener {
-            Toast.makeText(this, "Belom jadi boss, sabar yaa!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Masih dalam pengembangan", Toast.LENGTH_SHORT).show()
         }
     }
 
